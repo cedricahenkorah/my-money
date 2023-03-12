@@ -16,6 +16,17 @@ export default function TransactionList({ transactions }) {
           <button onClick={() => deleteDocument(transaction.id)}>x</button>
         </li>
       ))}
+      <li>
+        <p className="">
+          Total: $
+          {transactions
+            .reduce(
+              (total, transaction) => total + parseFloat(transaction.amount),
+              0
+            )
+            .toFixed(2)}
+        </p>
+      </li>
     </ul>
   );
 }
