@@ -17,8 +17,9 @@ export default function TransactionList({ transactions }) {
         </li>
       ))}
       <li>
-        <p className="">
-          Total: $
+        <p className={styles.name}>Total:</p>
+        <p className={styles.amount}>
+          ${" "}
           {transactions
             .reduce(
               (total, transaction) => total + parseFloat(transaction.amount),
