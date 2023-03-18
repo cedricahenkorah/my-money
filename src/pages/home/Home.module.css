@@ -1,14 +1,30 @@
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   max-width: 960px;
   margin: 60px auto;
 }
+
+@media (max-width: 500px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .sidebar {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
 .content {
-  padding-right: 30px;
+  padding-left: 30px;
 }
 .sidebar {
-  padding-left: 30px;
+  padding-right: 30px;
 }
 .sidebar form {
   padding: 20px;
